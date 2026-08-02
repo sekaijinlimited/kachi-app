@@ -5,16 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Supprimer son compte — Kachi</title>
 <style>
-  :root{--ground:#0B0E0D;--surface:#121816;--line:#223029;--teal:#63C1AE;--ivory:#EDE4D3}
+  :root{
+    --canvas:#EFEFF1; --surface:#FFFFFF; --line:#E7E8EB;
+    --ink:#0C0E10; --ink-muted:#6E747C; --accent:#2E9BF5;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{--canvas:#0B0C0E;--surface:#16181B;--line:#26292E;--ink:#F7F8F9;--ink-muted:#9AA1A9}
+  }
   *{margin:0;padding:0;box-sizing:border-box}
-  body{background:var(--ground);color:#b8b0a2;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.7}
+  body{background:var(--canvas);color:var(--ink-muted);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
   main{max-width:720px;margin:0 auto;padding:48px 24px}
-  h1{font-family:"Hiragino Mincho ProN","Noto Serif JP",serif;color:var(--ivory);font-size:32px;margin-bottom:24px}
-  h2{color:var(--ivory);font-size:20px;margin:32px 0 12px}
+  h1{color:var(--ink);font-size:30px;font-weight:700;letter-spacing:-0.02em;margin-bottom:20px}
+  h2{color:var(--ink);font-size:18px;font-weight:600;margin:32px 0 12px}
   p,li{margin-bottom:12px}
   ol,ul{padding-left:24px}
-  a{color:var(--teal)}
+  strong{color:var(--ink)}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
   .en{border-top:1px solid var(--line);margin-top:48px;padding-top:32px}
+  footer{border-top:1px solid var(--line);margin-top:48px;padding-top:22px;font-size:14px}
+  footer a{margin-right:12px}
 </style>
 </head>
 <body>
@@ -23,27 +33,46 @@
 
 <h2>Depuis l'application</h2>
 <ol>
-<li>Ouvrez Kachi et allez dans <strong>Profil</strong> (icône réglages en haut à droite).</li>
-<li>Touchez <strong>Supprimer le compte</strong>.</li>
-<li>Confirmez avec votre mot de passe.</li>
+<li>Ouvrez Kachi et touchez l'icône <strong>Réglages</strong>, en haut à droite de l'accueil.</li>
+<li>Descendez jusqu'à la section <strong>Compte</strong> et touchez <strong>Supprimer mon compte</strong>.</li>
+<li>Confirmez, puis saisissez votre mot de passe.</li>
 </ol>
-<p>La suppression est <strong>immédiate et irréversible</strong>. Toutes vos données sont effacées : compte, profil, repas, photos de repas, pesées, mesures corporelles, photos de progression, conversations avec le coach. Aucune donnée n'est conservée après la suppression.</p>
+<p>La suppression est <strong>immédiate et irréversible</strong>. Toutes vos données sont effacées :
+compte, profil, repas, photos de repas, pesées, séances, scans de composition corporelle, photos de
+progression, conversations avec le coach et jetons d'accès « Assistant IA ». Les sauvegardes chiffrées
+du serveur sont écrasées sous 7 jours au plus tard.</p>
+<p>Si vous souhaitez d'abord récupérer vos données, l'application propose un
+<strong>export complet au format JSON</strong> dans Réglages → Données.</p>
 
 <h2>Par e-mail</h2>
-<p>Vous pouvez aussi demander la suppression de votre compte et de toutes vos données en écrivant à <a href="mailto:f.ceprika@gmail.com">f.ceprika@gmail.com</a> depuis l'adresse e-mail associée à votre compte. Traitement sous 7 jours.</p>
+<p>Vous pouvez aussi demander la suppression de votre compte et de toutes vos données en écrivant à
+<a href="mailto:contact@sekaijin.fr">contact@sekaijin.fr</a> depuis l'adresse e-mail associée à votre
+compte. Traitement sous 7 jours.</p>
 
 <div class="en">
 <h1>Delete your Kachi account (English)</h1>
 <h2>From the app</h2>
 <ol>
-<li>Open Kachi and go to <strong>Profile</strong> (settings icon, top right).</li>
-<li>Tap <strong>Delete account</strong>.</li>
-<li>Confirm with your password.</li>
+<li>Open Kachi and tap the <strong>Settings</strong> icon at the top right of the home screen.</li>
+<li>Scroll to the <strong>Account</strong> section and tap <strong>Delete my account</strong>.</li>
+<li>Confirm, then enter your password.</li>
 </ol>
-<p>Deletion is <strong>immediate and irreversible</strong>. All your data is erased: account, profile, meals, meal photos, weigh-ins, body measurements, progress photos, coach conversations. No data is retained after deletion.</p>
+<p>Deletion is <strong>immediate and irreversible</strong>. All your data is erased: account, profile,
+meals, meal photos, weigh-ins, workouts, body composition scans, progress photos, coach conversations
+and "AI assistant" access tokens. Encrypted server backups are overwritten within 7 days at most.</p>
+<p>If you want to keep a copy first, the app offers a full <strong>JSON export</strong> under
+Settings → Data.</p>
 <h2>By email</h2>
-<p>You can also request deletion of your account and all associated data by emailing <a href="mailto:f.ceprika@gmail.com">f.ceprika@gmail.com</a> from the email address associated with your account. Processed within 7 days.</p>
+<p>You can also request deletion of your account and all associated data by emailing
+<a href="mailto:contact@sekaijin.fr">contact@sekaijin.fr</a> from the email address associated with
+your account. Processed within 7 days.</p>
 </div>
+
+<footer>
+  <a href="index.html">Accueil</a>
+  <a href="privacy.html">Confidentialité</a>
+  <a href="terms.html">Conditions</a>
+</footer>
 </main>
 </body>
 </html>

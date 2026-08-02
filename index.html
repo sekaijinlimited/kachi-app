@@ -3,41 +3,105 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kachi 勝ち — Coach calories</title>
-<meta name="description" content="Kachi — coach calories avec analyse photo par IA. Suivi nutrition, pesées et paliers métaboliques.">
+<title>Kachi — Coach calories</title>
+<meta name="description" content="Kachi — coach nutrition avec analyse photo par IA. Suivi des calories et macros, pesées, pas et séries.">
 <style>
-  :root{--ground:#0B0E0D;--surface:#121816;--line:#223029;--teal:#63C1AE;--ivory:#EDE4D3;--gold:#C7A469}
+  :root{
+    --canvas:#EFEFF1; --surface:#FFFFFF; --line:#E7E8EB;
+    --ink:#0C0E10; --ink-muted:#6E747C; --ink-faint:#A1A7AF;
+    --ink-surface:#0E2E4E; --on-ink:#F7F8F9; --on-ink-muted:#A9C4E2;
+    --accent:#2E9BF5;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --canvas:#0B0C0E; --surface:#16181B; --line:#26292E;
+      --ink:#F7F8F9; --ink-muted:#9AA1A9; --ink-faint:#6E747C;
+      --ink-surface:#1E2125; --on-ink:#F7F8F9; --on-ink-muted:#9AA1A9;
+    }
+  }
   *{margin:0;padding:0;box-sizing:border-box}
-  body{background:var(--ground);color:var(--ivory);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
-  main{max-width:640px;margin:0 auto;padding:64px 24px;flex:1}
-  .kanji{font-family:"Hiragino Mincho ProN","Noto Serif JP",serif;font-size:96px;color:var(--gold);line-height:1}
-  h1{font-family:"Hiragino Mincho ProN","Noto Serif JP",serif;font-size:40px;margin:16px 0 8px;color:var(--ivory)}
-  .tag{color:var(--teal);font-size:18px;margin-bottom:32px}
-  p{color:#b8b0a2;margin-bottom:16px}
-  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;margin:32px 0}
-  .card h2{font-size:16px;color:var(--ivory);margin-bottom:8px}
-  a{color:var(--teal)}
-  footer{border-top:1px solid var(--line);padding:24px;text-align:center;color:#6f6a5e;font-size:14px}
-  footer a{color:#8a8375;margin:0 8px}
+  body{
+    background:var(--canvas); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6; min-height:100vh; display:flex; flex-direction:column;
+    -webkit-font-smoothing:antialiased;
+  }
+  main{max-width:640px;margin:0 auto;padding:56px 24px;flex:1;width:100%}
+  .hero{
+    background:var(--ink-surface); border-radius:24px; padding:36px 28px;
+    display:flex; align-items:center; gap:22px; margin-bottom:28px;
+  }
+  .hero svg{flex:0 0 auto}
+  .hero h1{font-size:34px;font-weight:700;letter-spacing:-0.02em;color:var(--on-ink);margin-bottom:2px}
+  .hero .tag{color:var(--on-ink-muted);font-size:15px}
+  p{color:var(--ink-muted);margin-bottom:16px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin:20px 0}
+  .card h2{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:8px;letter-spacing:0.01em}
+  .card p:last-child{margin-bottom:0}
+  ul{margin:0 0 16px 20px;color:var(--ink-muted)}
+  li{margin:4px 0}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  footer{border-top:1px solid var(--line);padding:22px 24px;text-align:center;color:var(--ink-faint);font-size:14px}
+  footer a{color:var(--ink-muted);margin:0 8px;display:inline-block}
+  @media (max-width:520px){
+    .hero{flex-direction:column;text-align:center;gap:16px;padding:32px 22px}
+    .hero h1{font-size:28px}
+  }
 </style>
 </head>
 <body>
 <main>
-  <div class="kanji">勝</div>
-  <h1>Kachi</h1>
-  <div class="tag">Coach calories — la victoire par la régularité</div>
-  <p>Kachi est une application mobile de suivi nutritionnel. Prenez votre plat en photo, l'IA estime les calories et macros. Suivez vos pesées, vos pas et progressez par paliers métaboliques avec un coach intégré.</p>
-  <div class="card">
-    <h2>Beta privée</h2>
-    <p>L'application est actuellement en beta fermée sur Android et iOS. Accès sur invitation.</p>
+  <div class="hero">
+    <svg width="72" height="72" viewBox="0 0 100 100" role="img" aria-label="Logo Kachi">
+      <defs>
+        <linearGradient id="kring" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#3FD8FF"/>
+          <stop offset="100%" stop-color="#1E7BFF"/>
+        </linearGradient>
+      </defs>
+      <!-- anneau ouvert : ouverture de 46 degres, comme KMark dans l'app -->
+      <circle cx="50" cy="50" r="34" fill="none" stroke="url(#kring)" stroke-width="10"
+              stroke-linecap="round" stroke-dasharray="186 214"
+              transform="rotate(-67 50 50)"/>
+      <!-- bille detachee, dans l'ouverture -->
+      <circle cx="73.5" cy="26.5" r="6" fill="#3FD8FF"/>
+    </svg>
+    <div>
+      <h1>Kachi</h1>
+      <div class="tag">Coach calories — la victoire par la régularité</div>
+    </div>
   </div>
+
+  <p>Kachi est une application mobile de suivi nutritionnel pour iPhone et Android.
+    Photographiez votre plat : l'IA estime les calories et les macronutriments. Suivez vos pesées,
+    vos pas et vos séances, gardez votre série, et échangez avec un coach qui connaît vos chiffres.</p>
+
   <div class="card">
-    <h2>Contact</h2>
-    <p>Support : <a href="mailto:f.ceprika@gmail.com">f.ceprika@gmail.com</a></p>
+    <h2>Ce que fait l'application</h2>
+    <ul>
+      <li>Analyse d'un repas à partir d'une photo, d'un code-barres, ou en saisie manuelle</li>
+      <li>Objectifs caloriques et macros calculés à partir de votre profil</li>
+      <li>Suivi du poids, des pas, des séances et de la composition corporelle</li>
+      <li>Synchronisation facultative avec l'app Santé</li>
+      <li>Coach conversationnel — un personnage fictif, dont les réponses sont générées automatiquement</li>
+    </ul>
+    <p>Les estimations sont indicatives et ne remplacent pas l'avis d'un professionnel de santé.</p>
+  </div>
+
+  <div class="card">
+    <h2>Assistance</h2>
+    <p>Une question, un bug, une demande concernant vos données ? Écrivez à
+      <a href="mailto:contact@sekaijin.fr">contact@sekaijin.fr</a> — nous répondons sous 48 h.</p>
+    <p>Vous pouvez exporter toutes vos données ou
+      <a href="delete-account.html">supprimer votre compte</a> directement depuis l'application.</p>
   </div>
 </main>
 <footer>
-  <a href="privacy.html">Politique de confidentialité</a> · <a href="mailto:f.ceprika@gmail.com">Contact</a>
+  <a href="privacy.html">Politique de confidentialité</a> ·
+  <a href="terms.html">Conditions d'utilisation</a> ·
+  <a href="delete-account.html">Suppression de compte</a> ·
+  <a href="mailto:contact@sekaijin.fr">Contact</a>
 </footer>
 </body>
 </html>
